@@ -85,8 +85,8 @@ header {
 /*------------ menu en el nav-------------------*/
 nav {
     grid-area: nav;
-    display: grid;
-    max-width: 70%;
+    display: flex;
+    min-width: 70%;
     /*resposive*/
    /* margin: 30px auto;*/
      margin-left: 30px;
@@ -94,10 +94,14 @@ nav {
     justify-items: center;
     border-radius: 20px;
     background-color: rgb(186, 247, 199);
+
 }
 .menu {
     list-style: none;
-
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    
 }
 
 .menu>li {
@@ -155,6 +159,7 @@ nav {
 
 .item-slide .pagination-item img {
     max-width: 100%;
+    max-height: 70%;
 }
 
 .sectionA {
@@ -286,33 +291,95 @@ input[id="3"]:checked~.pagination .pagination-item[for="3"] {
 
 /*------------footer-------------*/
 .footer {
+    display:flex;
     grid-area: footer;
-    background-color: lightgray;
+    flex-direction: row;
+   /* min-width: 70%;*/
+   width: 100%;
+    background-color: #66CC8F;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+.piedepagina{
+        display: flex;
+    
 
+}
+.piedepagina >div >ul{
+    list-style: none;
+}
+
+.textofooter p{
+    font-size: 1.2em;
+}
+.piedepagina > div > ul > li >a{
+    display: flex;
+    font-size: 1.5em;
+    padding: 5px;
+    margin: 30px;
+    color: white;
+    text-decoration: none 
+       
+}
+
+.textofooter{
+    display: flex;
+    align-items: flex-end;
+}
+.piedepagina li a:hover {
+    color: #CE7D35;
+    transition: all 2s;
+}
+    
+
+
+.textofooter{
+    display: flex;
+    color: white;
+    float: right;
 
 }
 
-/*---------------página Micro y macro nutientes------*/
+.piedepagina menu {
+    align-content: flex-start;
+}
 
+
+
+/*---------------página Micro y macro nutientes------*/
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
 .main-macro-micro-Nutrientes {
     width: 100%;
-    display: grid;
+    
     grid-template-areas:
         "h1-macro h1-macro"
+        "h2-macro h2-macro"
         "sectionC sectionC"
+        "h2-macro h2-macro"
         "sectionD sectionD";
-
-    grid-template-columns: repeat(2, 1fr);
+     grid-template-columns: 50% 50%;
+   /* grid-template-columns: repeat(2, 2fr);*/
     gap:3vw;
     justify-items: center;
-    margin: auto 30px
+    margin: auto 
 
 }
 
 .h1-macro {
     grid-area: h1-macro;
 }
-
+.main-macro-micro-Nutrientes .h2-macro{
+    grid-area: h2-macro;
+}
 .sectionC {
 
     grid-area: sectionC;
@@ -330,10 +397,12 @@ input[id="3"]:checked~.pagination .pagination-item[for="3"] {
     text-align: center;
 }
 
+   
+
 .h2-macro>h2 {
     text-align: center;
     padding: 20px;
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .img-macro {
@@ -406,6 +475,13 @@ input[id="3"]:checked~.pagination .pagination-item[for="3"] {
     display: flex;
     justify-content: center;
     padding: 30px;
+    width: 1000px;
+    height:400px;
+    margin: auto;
+}
+.img-alimentacionsalud img{
+    width: 80%;
+    height: 100%;
 }
 .p-div-saludable{
     display: grid;
@@ -417,7 +493,7 @@ input[id="3"]:checked~.pagination .pagination-item[for="3"] {
     min-height: 50vh;
     word-wrap: break-word;
     margin: 30px;
-    font-size: 1.5rem;
+    font-size:1.2rem;
 }
 .p-div-saludable >p{
     padding: 10px;
@@ -429,5 +505,5 @@ input[id="3"]:checked~.pagination .pagination-item[for="3"] {
     
 }
 .img-proteina img{
-    max-width: 60%;
+    max-width: 80%;
 }
